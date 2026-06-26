@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Context Anchored QA</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📚 Context Anchored QA Assistant</h1>
+
+<p>
+Ask questions using only the provided document.
+</p>
+
+<form method="POST">
+
+<textarea
+name="question"
+placeholder="Ask a question..."
+rows="5">{{ question }}</textarea>
+
+<br>
+
+<button type="submit">
+
+🚀 Ask AI
+
+</button>
+
+</form>
+
+{% if answer %}
+
+<div class="result">
+
+<h2>Answer</h2>
+
+<p>{{ answer }}</p>
+
+{% if source %}
+
+<h3>📌 Source</h3>
+
+<p>{{ source }}</p>
+
+{% endif %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
